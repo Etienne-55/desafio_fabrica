@@ -1,36 +1,61 @@
-# Teste DevOps 1 - Workshop 2026.1
+# Teste DevOps 1 — Workshop 2026.1
 
 ## Conexão
 
 Conectar via SSH no servidor:
 
-- Host: bulbasaur@omarchy.local
-- Senha: desafio
+| Campo | Valor |
+|-------|-------|
+| Host  | `bulbasaur@omarchy.local` |
+| Senha | `desafio` |
+
+---
 
 ## Instruções
 
-1. Entrar na pasta desafio_workshop
-2. Criar uma branch com seu nome — essa branch será avaliada
-3. Você tem 45 minutos
+1. Entrar na pasta `desafio_workshop`
+2. Criar uma branch com seu nome — **essa branch será avaliada**
+3. Você tem **45 minutos**
+
+---
 
 ## Desafio
 
-O único container já funcional é o do nginx.
+O único container já funcional é o do **nginx**.
 
-Sua tarefa é criar os outros 3 containers:
+Sua tarefa é criar os outros containers:
 
-- Backend (Django)
-- Frontend (Next.js)
-- Banco de dados (PostgreSQL)
+### Containers Obrigatórios
 
-As credenciais do banco de dados estão no arquivo .env — não esqueça de usá-las.
+| Container | Tecnologia | Porta |
+|-----------|------------|-------|
+| Backend   | Django     | `8080` |
+| Frontend  | Next.js    | `3000` |
 
-adicionem o .env no gitiognore.
+### Container Bônus
 
-Após subir os containers, configure o arquivo nginx.conf para fazer o proxy reverso corretamente para o backend e o frontend.
+| Container      | Tecnologia |
+|----------------|------------|
+| Banco de dados | PostgreSQL |
 
-O desafio termina quando o trabalho estiver commitado na branch com seu nome.
+---
 
-## FUNDAMENTAL PARA A CORREÇÃO
+## Requisitos
 
-Não esqueçam de fazer o commit na branch correta com o nome de vocês.
+- As credenciais do banco de dados estão no arquivo `.env` — não esqueça de usá-las
+- Adicione o `.env` ao `.gitignore`
+- Configure o `nginx.conf` para fazer o **proxy reverso** corretamente:
+  - Frontend → `localhost:3000`
+  - Backend → `localhost:8080`
+  - O server name do nginx deve ser `localhost`
+
+---
+
+## Conclusão
+
+O desafio termina quando o trabalho estiver **commitado na branch com seu nome**.
+
+---
+
+> ⚠️ **FUNDAMENTAL PARA A CORREÇÃO**
+> Não esqueça de fazer o commit na **branch correta com o seu nome**.
