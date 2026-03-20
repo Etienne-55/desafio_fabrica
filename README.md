@@ -25,6 +25,8 @@ Sua tarefa é criar os outros 3 containers:
 
 As credenciais do banco de dados estão no arquivo .env — não esqueça de usá-las.
 
+adicionem o .env no gitiognore.
+
 Após subir os containers, configure o arquivo nginx.conf para fazer o proxy reverso corretamente para o backend e o frontend.
 
 O desafio termina quando o trabalho estiver commitado na branch com seu nome.
