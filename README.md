@@ -1,58 +1,34 @@
-# Workshop DevOps 2026.1 — Docker Challenge
+# Teste DevOps 1 - Workshop 2026.1
 
-## Your Task
-Create the two `Dockerfile`s and the `docker-compose.yml` from scratch.
+## Conexão
 
-## Project Structure
-```
-.
-├── django_app/          ← Python/Django backend (API)
-│   ├── core/            ← Django project settings
-│   ├── api/             ← Login + health endpoints
-│   ├── manage.py
-│   ├── requirements.txt
-│   └── Dockerfile       ← YOU CREATE THIS
-├── nextjs_app/          ← Next.js frontend
-│   ├── app/
-│   │   ├── layout.js
-│   │   └── page.js
-│   ├── package.json
-│   ├── next.config.js
-│   └── Dockerfile       ← YOU CREATE THIS
-├── .env                 ← credentials (already provided)
-└── docker-compose.yml   ← YOU CREATE THIS
-```
+Conectar via SSH no servidor:
 
-## Requirements
+- Host: bulbasaur@omarchy.local
+- Senha: desafio
 
-### django_app/Dockerfile
-- Base image: `python:3.12-slim`
-- Working dir: `/app`
-- Install dependencies from `requirements.txt`
-- Expose port `8000`
-- Start with: `gunicorn core.wsgi:application --bind 0.0.0.0:8000 --workers 2`
+## Instruções
 
-### nextjs_app/Dockerfile
-- Multi-stage build using `node:20-alpine`
-- Stage 1 (deps): install npm dependencies
-- Stage 2 (builder): build the Next.js app
-- Stage 3 (runner): run with `node server.js`
-- Expose port `3000`
+1. Entrar na pasta desafio_workshop
+2. Criar uma branch com seu nome — essa branch será avaliada
+3. Você tem 45 minutos
 
-### docker-compose.yml
-- Two services: `backend` (port 8000) and `frontend` (port 3000)
-- Load credentials from `.env` file
-- Frontend depends on backend
+## Desafio
 
-## Running
-```bash
-docker compose up --build
-```
+O único container já funcional é o do nginx.
 
-Then open: http://localhost:3000
+Sua tarefa é criar os outros 3 containers:
 
-## Credentials
-Check the `.env` file — credentials are loaded from there.
+- Backend (Django)
+- Frontend (Next.js)
+- Banco de dados (PostgreSQL)
 
-## Success
-When you log in successfully you will see a green ✓ "Test Completed" screen with all checks passed.
+As credenciais do banco de dados estão no arquivo .env — não esqueça de usá-las.
+
+Após subir os containers, configure o arquivo nginx.conf para fazer o proxy reverso corretamente para o backend e o frontend.
+
+O desafio termina quando o trabalho estiver commitado na branch com seu nome.
+
+## FUNDAMENTAL PARA A CORREÇÃO
+
+Não esqueçam de fazer o commit na branch correta com o nome de vocês.
