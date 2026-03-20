@@ -6,18 +6,6 @@ services:
     # ports:
     #   - "8000:8000"
     restart: unless-stopped
-    env_file:
-      - .env
-    environment:
-      - SECRET_KEY=${SECRET_KEY}
-      - DEBUG=${DEBUG}
-      - ADMIN_EMAIL=${ADMIN_EMAIL}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
-      - DB_HOST=${DB_HOST}
-      - DB_PORT=${DB_PORT}
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
 
   frontend:
     build:
@@ -28,8 +16,6 @@ services:
     restart: unless-stopped
     depends_on:
       - backend
-    environment:
-      - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
 
   db:
     image: postgres:16-alpine

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000'
+const BACKEND_URL = 'http://localhost'
 
 export default function Home() {
   const [connected, setConnected] = useState(false)

@@ -40,11 +40,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'workshop'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'postgres'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'NAME': 'workshop',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': '5432',
     }
 }
 
@@ -58,5 +58,5 @@ REST_FRAMEWORK = {
 }
 
 # Credentials from .env
-ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', 'admin@gmail.com')
-ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', '12345')
+ADMIN_EMAIL = 'admin@gmail.com'
+ADMIN_PASSWORD = '12345'
