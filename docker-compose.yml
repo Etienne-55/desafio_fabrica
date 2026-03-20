@@ -3,16 +3,12 @@ services:
     build:
       context: ./django_app
       dockerfile: Dockerfile
-    # ports:
-    #   - "8000:8000"
     restart: unless-stopped
 
   frontend:
     build:
       context: ./nextjs_app
       dockerfile: Dockerfile
-    # ports:
-    #   - "3000:3000"
     restart: unless-stopped
     depends_on:
       - backend
@@ -24,8 +20,8 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
-    ports:
-      - "5432:5432"
+    # ports:
+    #   - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

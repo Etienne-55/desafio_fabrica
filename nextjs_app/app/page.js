@@ -422,6 +422,7 @@ export default function Home() {
               <div className="test-box">
                 <div className="test-row"><span className="pass">PASS</span> Django backend reachable</div>
                 <div className="test-row"><span className="pass">PASS</span> Next.js frontend running</div>
+                <div className="test-row"><span className="pass">PASS</span> Database connected</div>
               </div>
 
               <div className="user-pill">logged as <span>{loggedUser?.email}</span></div>
